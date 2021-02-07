@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function() {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/eso', function () {
-    return view('eso');
+Route::get('/eso', [HomeController::class, 'eso']);
+
+Route::get('/github', static function() {
+   return redirect('https://github.com/xdarkyne');
+});
+Route::get('/discord', static function() {
+   return redirect('https://discord.gg/2JjnKs5sqP');
 });

@@ -1,9 +1,5 @@
 @extends('base')
 
-<?php
-    $page = 'home';
-?>
-
 @section('title', 'Darkyne | Home')
 
 @section('app-content')

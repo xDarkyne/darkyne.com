@@ -1,12 +1,3 @@
-<?php
-$nav = [
-    ['home', '/', false],
-    ['eso', '/eso', false],
-    ['github', 'https://github.com/xdarkyne', true],
-    ['discord', 'https://discord.gg/2JjnKs5sqP', true]
-];
-?>
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -37,8 +28,8 @@ $nav = [
                 @foreach($nav as $item)
                     <li id="nav-item">
                         <a href="{{$item[1]}}"
-                            @if($page == $item[0]) class="active" @endif
-                            @if($item[2] == true) target="_blank" @endif>
+                            @if($page ===  $item[0]) class="active" @endif
+                            @if($item[2] === true) target="_blank" @endif>
                             <span class="nav-tag">&lt;</span>
                             {{strtoupper($item[0])}}
                             <span class="nav-tag">&#47;&gt;</span>
