@@ -1,0 +1,63 @@
+name: CI
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: [ubuntu-latest]
+    if: github.ref == 'refs/heads/master'
+    strategy:
+      fail-fast: false
+      matrix:
+        php-versions:
+          - '7.3'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: shivammathur/setup-php@v1
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: intl
+
+      - name: Set app env
+        run: echo "APP_ENV=production" > .env
+
+      - name: (COMPOSER) Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest --no-interaction --no-dev --optimize-autoloader
+
+      - name: yarn install
+        run: yarn install
+
+      - name: yarn build
+        run: yarn run production
+
+      - name: Tar files
+        run: tar -czf dist.tar.gz app bootstrap config database public resources routes vendor artisan composer.json
+
+      - name: Copy dist.tar.gz to server via scp
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: dist.tar.gz
+          remote: ${{ secrets.DEPLOY_PATH }}/dist.tar.gz
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+
+      - name: Extract and cleanup on server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          port: 22
+          script: |
+            cd ${{ secrets.DEPLOY_PATH }}
+            rm -rf app bootstrap config database public resources routes vendor artisan composer.json
+            tar -xf dist.tar.gz
+            rm -rf storage/framework/cache
+            php7.3 artisan storage:link
+            php7.3 artisan cache:clear
+            rm dist.tar.gz
