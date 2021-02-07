@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    font-size: 1em;
+}
+
+#main-nav {
+    width: 100%;
+    height: 66px;
+    color: #f7fafc;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#nav-list {
+    max-width: 1256px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#nav-item {
+    width: max-content;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-item::after {
+    margin: 0 10px;
+    content: '/';
+    color: #696969;
+    opacity: .8;
+}
+
+#nav-item a {
+    font-weight: bold;
+}
+
+.nav-tag {
+    color: transparent;
+    font-weight: bold;
+    transition: all 300ms;
+}
+
+#nav-item:hover .nav-tag {
+    color: crimson;
+}
+
+.active {
+    color: crimson;
+}
+
+body {
+    background-image: url("https://esossl-a.akamaihd.net/assets/img/cms/media/0e0ce0ab9dabb54cb9071b6073fb8721_unlikely-allies-face-elsweyrs-invaders_wallpaper-1920x1080.jpg");
+}
+
+#app {
+    margin: 76px auto auto auto;
+    max-width: 1250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.sidebar {
+    width: 40%;
+    padding: 10px;
+    margin-left: 10px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+}
+
+.fluid {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+}
