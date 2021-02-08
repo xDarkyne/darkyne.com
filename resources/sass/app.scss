@@ -124,19 +124,21 @@ body {
 }
 
 .hero-wrapper {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
 }
 
 .half-page-hero {
     height: auto;
     flex: 0 0 50%;
+    width: 100%;
     padding: 0 10px;
 }
 
 .hero-text-container {
     padding-bottom: 50px;
     font-size: 1.25em;
+    line-break: strict;
 
     h1 {
         font-size: 1.5em;
@@ -178,6 +180,7 @@ body {
 
 .app-link:hover {
     color: $app-secondary-color;
+    text-decoration: underline;
 }
 
 /* ======== MOBILE STYLE ======== */

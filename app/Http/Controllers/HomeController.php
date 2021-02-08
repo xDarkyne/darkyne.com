@@ -17,4 +17,8 @@ class HomeController extends Controller
     public function eso() {
         return view('eso');
     }
+
+    public function contact() {
+        return view('contact');
+    }
 }

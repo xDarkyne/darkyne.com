@@ -9,10 +9,9 @@
                 <section class="half-page-hero">
                     <div class="hero-text-container">
                         <h1>Hello! I'm Dimitri aka. Darkyne.</h1>
-                        <p>Creating web experiences and learning new technologies is what I live for.
+                        <p>Creating web experiences and getting to know new technologies is what I live for.
                             As a specialist for system integration at <a class="app-link" href="https://pg.com">Procter & Gamble</a> and
-                            working on websites and dotNET apps in my free time I spend my time never
-                            stopping to improve.
+                            developing websites and dotNET apps I never stop improving.
                         </p>
                     </div>
                     <div class="hero-button-container">

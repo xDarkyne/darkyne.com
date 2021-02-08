@@ -30,7 +30,7 @@
                         </li>
                     @endforeach
                     <li class="nav-button">
-                        <a class="app-button" href="/discord" target="_blank">GET IN TOUCH</a>
+                        <a class="app-button" href="/contact">GET IN TOUCH</a>
                     </li>
                 </ul>
             </nav>

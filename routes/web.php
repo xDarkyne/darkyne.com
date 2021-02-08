@@ -20,6 +20,8 @@ Route::get('/work', [HomeController::class, 'work']);
 
 Route::get('/eso', [HomeController::class, 'eso']);
 
+Route::get('/contact', [HomeController::class, 'contact']);
+
 Route::get('/github', static function() {
    return redirect('https://github.com/xdarkyne');
 });
