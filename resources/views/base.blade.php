@@ -18,43 +18,30 @@
     </head>
 
     <body class="antialiased">
-        <nav id="main-nav">
-            <ul class="nav-list fluid">
-                @foreach($nav as $item)
-                    <li class="nav-item">
-                        <a href="{{$item[1]}}"
-                           @if($page ===  $item[0]) class="active" @endif
-                           @if($item[2] === true) target="_blank" @endif>
-                            <span class="nav-tag">&lt;</span>
-                            {{strtoupper($item[0])}}
-                            <span class="nav-tag">&#47;&gt;</span>
-                        </a>
+        <div id="app">
+            <nav id="main-nav">
+                <ul class="nav-list fluid inner">
+                    @foreach($nav as $item)
+                        <li class="nav-item">
+                            <a href="{{$item[1]}}"
+                               @if($item[2] === true) target="_blank" @endif>
+                                {{strtoupper($item[0])}}
+                            </a>
+                        </li>
+                    @endforeach
+                    <li class="nav-button">
+                        <a class="app-button" href="/discord" target="_blank">GET IN TOUCH</a>
                     </li>
-                @endforeach
-            </ul>
-        </nav>
+                </ul>
+            </nav>
 
-        <main class="app fluid">
-            <div class="app-content">
-                <div class="col-main col">
-                    @yield('app-content')
-                </div>
+            <main id="main-content">
+                @yield('content')
+            </main>
 
-                <div class="col-side col">
-                    <div class="col-card">
-                        <div class="col-header content">
-                            <h1>Sidebar</h1>
-                        </div>
-                        <div class="content">
-                            <p>text</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <footer id="main-footer">
-            <span><p>&copy;2020 <a class="app-link" href="https://darkyne.com">Darkyne</a></p></span>
-        </footer>
+            <footer id="main-footer">
+                <p>&copy;2020 <a class="app-link" href="https://darkyne.com">Darkyne</a></p>
+            </footer>
+        </div>
     </body>
 </html>

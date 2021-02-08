@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home']);
 
+Route::get('/work', [HomeController::class, 'work']);
+
 Route::get('/eso', [HomeController::class, 'eso']);
 
 Route::get('/github', static function() {

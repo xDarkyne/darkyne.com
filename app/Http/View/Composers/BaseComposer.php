@@ -10,9 +10,9 @@ class BaseComposer
     public function compose(View $view): void {
         $nav = [
             ['home', '/', false],
+            ['work', '/work', false],
             ['eso', '/eso', false],
-            ['github', '/github', true],
-            ['discord', '/discord', true]
+            ['github', '/github', true]
         ];
 
         $view->with('nav', $nav);
