@@ -76,7 +76,6 @@ body {
 #main-content {
     width: 100%;
     margin-top: 66px;
-    //padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -158,14 +157,57 @@ body {
     margin-top: auto;
 }
 
+.project-card {
+    padding-bottom: 20px;
+    border: 4px;
+
+    .project-header {
+        background: rgba(0, 0, 0, 0.125);
+        border-radius: 4px 4px 0 0;
+        padding: 5px 10px;
+        h2 {
+            color: #494949;
+            font-size: 1.2em;
+        }
+    }
+
+    .project-body {
+        padding: 5px 10px;
+        border-left: 1px solid rgba(0, 0, 0, 0.125);
+        border-right: 1px solid rgba(0, 0, 0, 0.125);
+        p {
+            color: #191919;
+        }
+    }
+
+    .project-link {
+        padding: 5px 10px 10px 10px;
+        border-left: 1px solid rgba(0, 0, 0, 0.125);
+        border-right: 1px solid rgba(0, 0, 0, 0.125);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+}
+
 /* ======== APP CONTROL STYLE ======== */
 .app-button {
+    width: max-content;
     padding: 10px;
     color: white;
     background: $app-main-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     font-weight: bold;
     border-radius: 4px;
     transition: all 300ms;
+
+    svg {
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+        color: white;
+    }
 }
 
 .app-button:hover {

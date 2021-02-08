@@ -2,6 +2,7 @@
 
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 
 class HomeController extends Controller
@@ -11,7 +12,9 @@ class HomeController extends Controller
     }
 
     public function work() {
-        return view('work');
+        $projects = DB::table('project')->get();
+
+        return view('work')->with('projects', $projects);
     }
 
     public function eso() {
