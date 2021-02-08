@@ -3,8 +3,8 @@
 /* ======== VARIABLES ======== */
 $header-height: 66px;
 $max-body-width: 1140px;
-$app-main-color: #7289da;
-$app-secondary-color: #8ea1e1;
+$app-main-color: #9575cd;
+$app-secondary-color: #65499c;
 $combined-element-height: calc(var($header-height) + var($header-height) + 20px);
 
 /* ======== CSS RESET & GENERAL STYLE ======== */
@@ -130,7 +130,7 @@ body {
 
 .half-page-hero {
     height: auto;
-    flex: 1;
+    flex: 0 0 50%;
     padding: 0 10px;
 }
 
@@ -182,11 +182,16 @@ body {
 
 /* ======== MOBILE STYLE ======== */
 @media only screen and (max-width: 600px) {
+    #main-footer {
+        height: $header-height;
+    }
+
     .hero-wrapper {
         flex-direction: column;
     }
 
     .half-page-hero {
+        flex: 1;
         padding-bottom: 55px;
     }
 }

@@ -60,7 +60,7 @@
                         <p>Now consider checking out my other projects</p>
                     </div>
                     <div class="hero-button-container">
-                        <a href="https:www.darkyne.com/github" class="app-button">Take me to GitHub</a>
+                        <a href="/github" class="app-button">Take me to GitHub</a>
                     </div>
                 </section>
             </div>
